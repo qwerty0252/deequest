@@ -23,15 +23,15 @@ async function get(url) {
   });
 }
 
-async function post(url, bodyy) {
+async function post(url, body) {
   return new Promise((resolve, reject) => {
-    let body = JSON.stringify(bodyy);
+    let post_body = JSON.stringify(body);
     let data = "";
     let options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Content-Length": Buffer.byteLength(body),
+        "Content-Length": Buffer.byteLength(post_body),
       },
     };
 
@@ -53,10 +53,9 @@ async function post(url, bodyy) {
       reject(error);
     });
 
-    request.write(body);
+    request.write(post_body);
     request.end();
   });
 }
 
-test();
 module.exports = { post, get };
