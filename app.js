@@ -1,34 +1,25 @@
 const http = require("http");
 
-function req() {
-  const options = {
-    hostname: "localhost",
-    port: "4252",
-    path: "/api",
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+async function get(url) {
+  return new Promise((resolve, reject) => {
+    let data = "";
+    const request = http.request(new URL(`${url}`), (res) => {
+      res.setEncoding("utf8");
+      res.on("data", (chunk) => {
+        data += chunk;
+      });
 
-  let data = "";
-
-  const request = http.request(options, (res) => {
-    res.setEncoding("utf8");
-    res.on("data", (chunk) => {
-      data += chunk;
+      res.on("end", () => {
+        resolve(data);
+      });
     });
 
-    res.on("end", () => {
-      console.log(data);
+    request.on("error", (error) => {
+      reject(error);
     });
-  });
 
-  request.on("error", (error) => {
-    console.error(error);
+    request.end();
   });
-
-  request.end();
 }
 
-exports.req = req;
+exports.get = get;
