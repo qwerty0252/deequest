@@ -1,0 +1,11 @@
+{
+  "name": "deequest",
+  "version": "1.0.0",
+  "description": "I always start with the readme cuz, I am mostly lazy to start the coding😂😂.\r This is meant to be a very simple and basic npm package that can make api calls to a server.\r It will abstract all the processes involved in making making api calls.\r It will also be similar to the popular nodejs libray axios.\r I also plan on making a cli interface for the package. The cli interface will make it easier\r to make api calls on the fly. So that's it for now🙂",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Enyinnaya",
+  "license": "ISC"
+}
