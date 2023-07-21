@@ -38,7 +38,7 @@ const arg_put = argv.put;
 const arg_url = argv.url;
 const arg_body = argv.body;
 
-//This probably isn't the best way to this. But rn I'm brain dead. I'll think of a fancy way to this later
+//This probably isn't the best way to this. But rn I'm brain dead. I'll think of a fancy way to do this later
 if (arg_get) {
   get(arg_url).then((res) => console.log(`response: ${res}`));
 } else if (arg_post) {
