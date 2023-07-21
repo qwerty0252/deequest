@@ -1,5 +1,7 @@
+#! /usr/bin/env node
+
 const yargs = require("yargs");
-const { post, get, put, Delete } = require("../app");
+const { post, get, put, Delete } = require("..");
 
 const argv = yargs
   .option("get", {
