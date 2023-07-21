@@ -19,6 +19,7 @@ This will install the npm package. It comes with normal node module and a cli to
 
 To use this npm package you can import it into you nodejs application or call it's functions using the cli interface provided.
 To use the module in your nodejs application. There are four http method available in this module GET, POST, DELETE, PUT.
+All the methods return promises.
 
 > const deequest = require('deequest')
 
