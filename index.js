@@ -124,4 +124,4 @@ async function put(url, body) {
   });
 }
 
-module.exports = { post, get, delete: Delete, put };
+module.exports = { post, get, Delete, put };
